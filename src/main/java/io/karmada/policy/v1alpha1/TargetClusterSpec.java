@@ -1,0 +1,68 @@
+package io.karmada.policy.v1alpha1;
+
+@com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL)
+@com.fasterxml.jackson.annotation.JsonPropertyOrder({"clusterNames","exclude","fieldSelector","labelSelector"})
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None.class)
+@lombok.ToString()
+@lombok.EqualsAndHashCode()
+@lombok.Setter()
+@lombok.experimental.Accessors(prefix = {
+    "_",
+    ""
+})
+@io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+})
+public class TargetClusterSpec implements io.fabric8.kubernetes.api.model.KubernetesResource {
+
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterNames")
+    private java.util.List<String> clusterNames;
+
+    public java.util.List<String> getClusterNames() {
+        return clusterNames;
+    }
+
+    public void setClusterNames(java.util.List<String> clusterNames) {
+        this.clusterNames = clusterNames;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+    private java.util.List<String> exclude;
+
+    public java.util.List<String> getExclude() {
+        return exclude;
+    }
+
+    public void setExclude(java.util.List<String> exclude) {
+        this.exclude = exclude;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("fieldSelector")
+    private FieldSelectorSpec fieldSelector;
+
+    public FieldSelectorSpec getFieldSelector() {
+        return fieldSelector;
+    }
+
+    public void setFieldSelector(FieldSelectorSpec fieldSelector) {
+        this.fieldSelector = fieldSelector;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("labelSelector")
+    private LabelSelectorSpec labelSelector;
+
+    public LabelSelectorSpec getLabelSelector() {
+        return labelSelector;
+    }
+
+    public void setLabelSelector(LabelSelectorSpec labelSelector) {
+        this.labelSelector = labelSelector;
+    }
+}
